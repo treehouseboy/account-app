@@ -2,6 +2,8 @@ package accountApp;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.function.Predicate;
 
 public class Service {
 
@@ -45,6 +47,19 @@ public class Service {
 
 	public void setNextID(int nextID) {
 		this.nextID = nextID;
+	}
+	
+	public int getNumberOfNames(String name) {
+		
+		int total = 0;
+//		int result = accountMap.entrySet().stream().filter(name -> name.getValue();
+		for (Map.Entry<Integer, Account> entry : accountMap.entrySet()) {
+			if(entry.getValue().getFirstName() == name) {
+				total++;
+			}
+		}
+		
+		return total;
 	}
 
 
