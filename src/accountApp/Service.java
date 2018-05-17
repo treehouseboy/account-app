@@ -52,9 +52,11 @@ public class Service {
 	public int getNumberOfNames(String name) {
 		
 		int total = 0;
-//		int result = accountMap.entrySet().stream().filter(name -> name.getValue();
-		for (Map.Entry<Integer, Account> entry : accountMap.entrySet()) {
-			if(entry.getValue().getFirstName() == name) {
+//		int result = (int) accountMap.entrySet().stream().filter(x -> x.getValue().getFirstName().equals(name)).count();
+		
+		for (Map.Entry<Integer, Account> entry : accountMap.entrySet()
+				) {
+			if(entry.getValue().getFirstName().equals(name)) {
 				total++;
 			}
 		}
